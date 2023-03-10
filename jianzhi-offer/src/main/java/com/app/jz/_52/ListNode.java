@@ -1,8 +1,8 @@
-package com.app.jz._25;
+package com.app.jz._52;
 
 public class ListNode {
     int val;
-    public ListNode next = null;
+    ListNode next = null;
 
     ListNode(int val) {
         this.val = val;
