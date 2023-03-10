@@ -11,6 +11,7 @@
         <module>easy</module>
         <module>medium</module>
         <module>hard</module>
+        <module>jianzhi-offer</module>
     </modules>
     <packaging>pom</packaging>
 
