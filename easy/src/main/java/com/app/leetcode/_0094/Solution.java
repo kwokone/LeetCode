@@ -1,4 +1,4 @@
-package com.app.leetcode._94;
+package com.app.leetcode._0094;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +39,7 @@ public class Solution {
 
     /**
      * 迭代（使用栈）
+     * 深度优先遍历
      *
      * @param root
      * @return
@@ -56,7 +57,7 @@ public class Solution {
                 cur = cur.left;
             }
 
-            cur = stack.pop();
+             cur = stack.pop();
             ret.add(cur.val);
             cur = cur.right;
 

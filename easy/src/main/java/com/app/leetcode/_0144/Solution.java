@@ -42,15 +42,8 @@ public class Solution {
     }
 
     /**
+     * （基于深度优先遍历）
      * 迭代 Iteration
-     * 1. 初始化集合和一个栈
-     * 2. 添加根结点
-     * 3. 当栈不为空时，最上面的元素出栈，若该元素不为null，则：
-     * -- 栈是先进后出
-     * （1）将他的值添加到集合
-     * （2）将右子树添加到栈
-     * （3）将左子树添加到栈
-     * 4. 重复3，栈为空时得到目标集合
      *
      * @param root
      * @return
@@ -60,17 +53,14 @@ public class Solution {
         List<Integer> ret = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
 
-        stack.add(root);
+        stack.push(root);
 
         while (!stack.isEmpty()) {
-            TreeNode curNode = stack.peek(); // 查询顶部元素
-            stack.pop();
-
-            if (curNode != null) {
-                ret.add(curNode.val);
-                stack.add(curNode.right);
-                stack.add(curNode.left);
-            }
+            TreeNode cur = stack.pop(); // 查询顶部元素
+            if (cur == null) continue;
+                ret.add(cur.val);
+                stack.push(cur.right); // 先右后左，保证左子树先遍历
+                stack.push(cur.left);
         }
 
         return ret;
